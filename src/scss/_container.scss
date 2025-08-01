@@ -1,0 +1,22 @@
+//  ╭─────────────────────────────────────────────────────────────────────────╮
+//  │ CONTAINER:                                                              │
+//  ╰─────────────────────────────────────────────────────────────────────────╯
+@mixin container {
+  padding: {
+    left: 15px;
+    right: 15px;
+  }
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  @media (min-width: 768px) {
+    max-width: 750px;
+  }
+  @media (min-width: 992px) {
+    max-width: 970px;
+  }
+  @media (min-width: 1200px) {
+    max-width: 1170px;
+  }
+}

@@ -1,0 +1,24 @@
+//  ╭─────────────────────────────────────────────────────────────────────────╮
+//  │ MediaQuery                                                              │
+//  ╰─────────────────────────────────────────────────────────────────────────╯
+@mixin bp($media: mb) {
+  @if $media == mb {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $media == sm {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $media == md {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $media == lg {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else {
+    @error "#{$media} => media not avilable use [mb => mobile, sm => small, md => medium, lg => large]";
+  }
+}

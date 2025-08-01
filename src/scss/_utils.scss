@@ -1,0 +1,109 @@
+// Margin
+@mixin m-x($margin-right, $margin-left: $margin-right) {
+  margin-left: $margin-left;
+  margin-right: $margin-right;
+}
+@mixin m-y($margin-top, $margin-bottom: $margin-top) {
+  margin-top: $margin-top;
+  margin-bottom: $margin-bottom;
+}
+@mixin m-auto {
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+// Padding
+@mixin p-x($padding-right, $padding-left: $padding-right) {
+  padding-left: $padding-left;
+  padding-right: $padding-right;
+}
+@mixin p-y($padding-top, $padding-bottom: $padding-top) {
+  padding-top: $padding-top;
+  padding-bottom: $padding-bottom;
+}
+
+// Overlay
+@mixin bg-overlay($img, $color: $dark) {
+  background-image:
+    linear-gradient(40deg, rgba($color, 1), rgba($color, 0.1)), url($img);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+// Background-Images
+@mixin bg-image($img) {
+  background-image: url($img);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+// Fix Image Overflow
+@mixin img-fluid {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+}
+
+// Transition
+@mixin transition(
+  $property: all,
+  $duration: 0.3s,
+  $timing-function: ease-in-out,
+  $delay: 0s
+) {
+  transition-property: $property;
+  transition-duration: $duration;
+  transition-timing-function: $timing-function;
+  transition-delay: $delay;
+}
+
+// Buttons
+@mixin button($pd-y: 10px, $pd-x: 15px, $bg: $dark, $color: $light) {
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: $pd-y $pd-x;
+  background: $bg;
+  color: $color;
+}
+
+// Center
+@mixin center($axis: "both") {
+  @if $axis == "both" or $axis == "vertical" {
+    top: 50%;
+  }
+
+  @if $axis == "both" or $axis == "horizontal" {
+    left: 50%;
+  }
+
+  transform: if(
+      $axis == "horizontal",
+      translateX(-50%),
+      if($axis == "both", translateX(-50%), null)
+    )
+    if(
+      $axis == "vertical",
+      translateY(-50%),
+      if($axis == "both", translateY(-50%), null)
+    );
+}
+
+// Circle
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  display: inline-block;
+  border-radius: 100%;
+}
+
+// Square
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}

@@ -1,0 +1,38 @@
+//  ╭─────────────────────────────────────────────────────────────────────────╮
+//  │ Layouts:                                                                │
+//  ╰─────────────────────────────────────────────────────────────────────────╯
+//  ╭─────────────────────────────────────────────────────────────────────────╮
+//  │ FLEX:                                                                   │
+//  ╰─────────────────────────────────────────────────────────────────────────╯
+%flex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+%f-center {
+  @extend %flex;
+  justify-content: center;
+}
+%f-between {
+  @extend %flex;
+  justify-content: space-between;
+}
+%f-evenly {
+  @extend %flex;
+  justify-content: space-evenly;
+}
+//  ╭─────────────────────────────────────────────────────────────────────────╮
+//  │ GRID:                                                                   │
+//  ╰─────────────────────────────────────────────────────────────────────────╯
+%grid {
+  display: grid;
+  gap: 10px;
+}
+%g-three {
+  @extend %grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+%g-four {
+  @extend %grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
